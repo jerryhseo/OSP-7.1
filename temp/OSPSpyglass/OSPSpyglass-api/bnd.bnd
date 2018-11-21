@@ -1,0 +1,9 @@
+Bundle-Name: OSPSpyglass-api
+Bundle-SymbolicName: com.kisti.osp.spyglass.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.kisti.osp.spyglass.exception,\
+	com.kisti.osp.spyglass.model,\
+	com.kisti.osp.spyglass.service,\
+	com.kisti.osp.spyglass.service.persistence
+-includeresource: META-INF/service.xml=../OSPSpyglass-service/service.xml

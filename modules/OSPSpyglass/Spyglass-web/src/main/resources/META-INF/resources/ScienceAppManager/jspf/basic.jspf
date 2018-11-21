@@ -1,0 +1,64 @@
+<%@page import="com.kisti.osp.spyglass.constants.ScienceAppTypes"%>
+<%@page import="com.kisti.osp.spyglass.constants.ScienceAppOpenLevels"%>
+
+<portlet:actionURL name="/scienceapp/save/basic-info" var="saveBasicInfo">
+</portlet:actionURL>
+
+<aui:form action="<%= saveBasicInfo.toString() %>" name="basicInformationForm">
+	<aui:container cssClass='super-awesome-container'>
+		<aui:row>
+			<aui:col md="5" sm="5">
+				<aui:input type="text" name="scienceAppName" label="name" helpMessage="scienceapp-name-help-message">
+					<aui:validator name="required"></aui:validator>
+				</aui:input>
+			</aui:col>
+			<aui:col md="2" sm="2">
+				<aui:input type="text" name="scienceAppVersion" label="version" helpMessage="scienceapp-version-help-message">
+					<aui:validator name="required"></aui:validator>
+				</aui:input>
+			</aui:col>
+		</aui:row>
+		<aui:row>
+			<aui:col md="5" sm="5">
+				<aui:select name="scienceAppType" label="type" helpMessage="scienceapp-type-help-message">
+					<%
+						ScienceAppTypes[] appTypes = ScienceAppTypes.values();
+						for( ScienceAppTypes appType : appTypes ){
+					%>
+						<aui:option label="<%= appType.toString() %>" selected="<%= appType == ScienceAppTypes.SOLVER %>" value="<%= appType.toString()%>"></aui:option>
+					<%	
+						}
+					%>
+				</aui:select>
+			</aui:col>
+			<aui:col md="5" sm="5">
+				<aui:select name="scienceAppOpenLevel" label="open-level" helpMessage="scienceapp-open-level-help-message">
+					<%
+						ScienceAppOpenLevels[] openLevels = ScienceAppOpenLevels.values();
+						for( ScienceAppOpenLevels openLevel : openLevels ){
+					%>
+						<aui:option label="<%= openLevel.toString() %>" selected="<%= openLevel == ScienceAppOpenLevels.RUN %>" value="<%= openLevel.toString()%>"></aui:option>
+					<%	
+						}
+					%>
+				</aui:select>
+			</aui:col>
+		</aui:row>
+		<aui:row>
+			<aui:col md="12" sm="12">
+				<aui:input type="text" name="scienceAppTitle" label="title" localized="true" helpMessage="scienceapp-title-help-message">
+					<aui:validator name="required"></aui:validator>
+				</aui:input>
+			</aui:col>
+		</aui:row>
+		<aui:row>
+			<aui:col md="12" sm="12">
+				<aui:button-row>
+					<aui:button type="submit"></aui:button>
+				</aui:button-row>
+			</aui:col>
+		</aui:row>
+		
+	</aui:container>
+	
+</aui:form>

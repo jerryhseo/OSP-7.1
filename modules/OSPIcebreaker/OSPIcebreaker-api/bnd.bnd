@@ -1,0 +1,25 @@
+Bundle-Name: OSPIcebreaker-api
+Bundle-SymbolicName: com.kisti.osp.icebreaker.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.kisti.osp.icebreaker.exception,\
+	com.kisti.osp.icebreaker.model,\
+	com.kisti.osp.icebreaker.service,\
+	com.kisti.osp.icebreaker.service.persistence,\
+	com.kisti.osp.icebreaker.constants,\
+	com.kisti.osp.icebreaker.scheduler.torque,\
+	com.kisti.osp.icebreaker.scheduler.search,\
+	com.kisti.osp.icebreaker.scheduler.asset,\
+	com.kisti.osp.icebreaker.permissions,\
+	com.kisti.osp.icebreaker.constants,\
+	com.kisti.osp.icebreaker.listeners
+Import-Package: \
+			!com.kisti.osp.icebreaker.*,\
+			*
+Include-Resource:\
+			@commons-lang3-3.6.jar,\
+			@commons-exec-1.3.jar,\
+			@commons-io-2.6.jar,\
+			@portlet-api-2.0.jar,\
+			@javax.servlet-api-3.0.1.jar
+-includeresource: META-INF/service.xml=../OSPIcebreaker-service/service.xml

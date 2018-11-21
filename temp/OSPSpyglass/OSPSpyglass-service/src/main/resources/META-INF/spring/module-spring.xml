@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="com.kisti.osp.spyglass.service.impl.InputPortsLocalServiceImpl" id="com.kisti.osp.spyglass.service.InputPortsLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.InputPortsPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.InputPortsPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.LayoutLocalServiceImpl" id="com.kisti.osp.spyglass.service.LayoutLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.LayoutPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.LayoutPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.LogPortsLocalServiceImpl" id="com.kisti.osp.spyglass.service.LogPortsLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.LogPortsPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.LogPortsPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.OutputPortsLocalServiceImpl" id="com.kisti.osp.spyglass.service.OutputPortsLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.OutputPortsPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.OutputPortsPersistence" parent="basePersistence" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppLocalServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppLocalService" />
+	<bean class="com.kisti.osp.spyglass.service.impl.ScienceAppServiceImpl" id="com.kisti.osp.spyglass.service.ScienceAppService" />
+	<bean class="com.kisti.osp.spyglass.service.persistence.impl.ScienceAppPersistenceImpl" id="com.kisti.osp.spyglass.service.persistence.ScienceAppPersistence" parent="basePersistence" />
+</beans>

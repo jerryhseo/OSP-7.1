@@ -1,0 +1,4 @@
+Bundle-Name: OSPControlPanelCategories
+Bundle-SymbolicName: com.osp.control.panel.categories
+Bundle-Version: 1.0.0
+Export-Package: com.osp.control.panel.categories.constants

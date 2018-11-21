@@ -1,0 +1,11 @@
+Bundle-Name: OSPUtil-api
+Bundle-SymbolicName: com.kisti.osp.util.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.kisti.osp.util.exception,\
+	com.kisti.osp.util.model,\
+	com.kisti.osp.util.service,\
+	com.kisti.osp.util.service.persistence,\
+	com.kisti.osp.util.file,\
+	com.kisti.osp.util.constants
+-includeresource: META-INF/service.xml=../OSPUtil-service/service.xml

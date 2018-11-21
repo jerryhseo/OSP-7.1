@@ -1,0 +1,15 @@
+create index IX_A7794B49 on SPYGLASS_ScienceApp (appType[$COLUMN_LENGTH:75$]);
+create index IX_AEA2718F on SPYGLASS_ScienceApp (authorId, appType[$COLUMN_LENGTH:75$]);
+create index IX_6F69A42 on SPYGLASS_ScienceApp (authorId, status);
+create index IX_420A956E on SPYGLASS_ScienceApp (groupId, status);
+create index IX_B2160BA8 on SPYGLASS_ScienceApp (groupId, userId, status);
+create index IX_640DCF69 on SPYGLASS_ScienceApp (languages[$COLUMN_LENGTH:75$]);
+create index IX_3668F887 on SPYGLASS_ScienceApp (name[$COLUMN_LENGTH:75$], version[$COLUMN_LENGTH:75$]);
+create index IX_A29106E8 on SPYGLASS_ScienceApp (openLevel[$COLUMN_LENGTH:75$]);
+create index IX_1D9E1433 on SPYGLASS_ScienceApp (runType[$COLUMN_LENGTH:75$]);
+create index IX_BAAA5B8C on SPYGLASS_ScienceApp (stage[$COLUMN_LENGTH:75$]);
+create index IX_9B60A148 on SPYGLASS_ScienceApp (status);
+create index IX_DDD94C66 on SPYGLASS_ScienceApp (title[$COLUMN_LENGTH:75$]);
+create index IX_88779D82 on SPYGLASS_ScienceApp (userId, status);
+create index IX_9D16D1D6 on SPYGLASS_ScienceApp (uuid_[$COLUMN_LENGTH:75$], companyId);
+create unique index IX_2CB5D5D8 on SPYGLASS_ScienceApp (uuid_[$COLUMN_LENGTH:75$], groupId);

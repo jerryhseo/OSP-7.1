@@ -1,0 +1,4 @@
+Bundle-Name: OSPSchedulerManager
+Bundle-SymbolicName: com.osp.icebreaker.scheduler.manager
+Bundle-Version: 1.0.0
+Export-Package: com.osp.icebreaker.scheduler.manager.constants

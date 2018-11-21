@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.0.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
+
+<resource-action-mapping>
+	<model-resource>
+	    <model-name>com.kisti.osp.spyglass</model-name>
+	    <portlet-ref>
+	    	<portlet-name>com_kisti_osp_spyglass_web_ScienceAppManager</portlet-name>
+	    </portlet-ref>
+	    <permissions>
+	        <supports>
+	            <action-key>ADD_SCIENCEAPP</action-key>
+	            <action-key>DELETE_SCIENCEAPP</action-key>
+	            <action-key>UPDATE_SCIENCEAPP</action-key>
+	            <action-key>VIEW</action-key>
+	        </supports>
+	        <site-member-defaults>
+	        	<action-key>VIEW</action-key>
+	        </site-member-defaults>
+	        <guest-defaults />
+	        <guest-unsupported>
+	            <action-key>ADD_SCIENCEAPP</action-key>
+	            <action-key>DELETE_SCIENCEAPP</action-key>
+	            <action-key>UPDATE_SCIENCEAPP</action-key>
+	        </guest-unsupported>
+	    </permissions>
+	</model-resource>
+	
+	<model-resource>
+	    <model-name>com.kisti.osp.spyglass.model.ScienceApp</model-name>
+	    <portlet-ref>
+	    	<portlet-name>com_kisti_osp_spyglass_web_ScienceAppManager</portlet-name>
+	    </portlet-ref>
+	    <permissions>
+	        <supports>
+	            <action-key>ADD_SCIENCEAPP</action-key>
+	            <action-key>DELETE_SCIENCEAPP</action-key>
+	            <action-key>UPDATE_SCIENCEAPP</action-key>
+	            <action-key>VIEW</action-key>
+	        </supports>
+	        <site-member-defaults>
+	            <action-key>VIEW</action-key>
+	        </site-member-defaults>
+	        <guest-defaults>
+	            <action-key>VIEW</action-key>
+	        </guest-defaults>
+	        <guest-unsupported>
+	            <action-key>ADD_SCIENCEAPP</action-key>
+	            <action-key>DELETE_SCIENCEAPP</action-key>
+	            <action-key>UPDATE_SCIENCEAPP</action-key>
+	        </guest-unsupported>
+	    </permissions>
+	</model-resource>
+	
+</resource-action-mapping>

@@ -1,0 +1,5 @@
+Bundle-Name: TestAngularProject
+Bundle-SymbolicName: com.osp.test.angular
+Bundle-Version: 1.0.0
+Export-Package: com.osp.test.angular.constants
+Web-ContextPath: /TestAngularProject

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="com.kisti.osp.icebreaker.model.Job" />
+	<import class="com.kisti.osp.icebreaker.model.JobData" />
+	<import class="com.kisti.osp.icebreaker.model.OSPSchedulerEntry" />
+	<class name="com.kisti.osp.icebreaker.model.impl.JobImpl" table="icebreaker_Job">
+		<id name="jobId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="jobName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="simulationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="schedulerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="workflowId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="solverExe" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="workingDir" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="runType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="logFileName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="queueName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="command" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="referenceFiles" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="environmentVars" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nodes" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="processorsPerNode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="wallTime" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="eligibleTime" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="afterAny" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="afterOk" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="submitArgs" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="jobStatus" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="reserveResults" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="queuedDate" type="org.hibernate.type.TimestampType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="completeDate" type="org.hibernate.type.TimestampType" />
+		<property name="usedMemory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="usedCpuTime" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="usedWalltime" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.kisti.osp.icebreaker.model.impl.JobDataImpl" table="icebreaker_JobData">
+		<id name="jobId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="inputData" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.kisti.osp.icebreaker.model.impl.OSPSchedulerEntryImpl" table="icebreaker_OSPSchedulerEntry">
+		<id name="schedulerEntryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="version" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="accessMethod" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="authorizedUser" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statusByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="statusByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="statusDate" type="org.hibernate.type.TimestampType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="serverIp" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sshPort" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="authorizedPassword" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="schedulerClass" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

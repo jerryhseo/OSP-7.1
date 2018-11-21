@@ -1,0 +1,919 @@
+===================================================================
+--- aui.css	Original File
++++ aui.scss	Updated File
+@@ -3,13 +3,13 @@
+ @import "aui/alloy-font-awesome/scss/variables";
+ @import "aui/alloy-font-awesome/scss/mixins-alloy";
+ @import "aui/alloy-font-awesome/scss/path-alloy";
+ 
+-.aui {
++html {
+ 	@import "aui_variables";
+ 
+-	$iconSpritePath: '../images/aui/glyphicons-halflings.png' !default;
+-	$iconWhiteSpritePath: '../images/aui/glyphicons-halflings-white.png' !default;
++/* $icon-sprite-path has been removed in Bootstrap 3 -- 	$icon-sprite-path: '../images/aui/glyphicons-halflings.png' !default; */
++/* $icon-white-sprite-path has been removed in Bootstrap 3 -- 	$icon-white-sprite-path: '../images/aui/glyphicons-halflings-white.png' !default; */
+ 
+ 	//@import "aui/bootstrap"; // Remove >> Bootstrap 2.3.2
+ 	@import "aui/variables-alloy";
+ 	@import "aui/variables";
+@@ -28,11 +28,11 @@
+ 	@import "aui/alloy-font-awesome/scss/icons-alloy-extra";
+ 	
+ 	@import "edison/scss/custom-edison";// Custom EDISON
+ 
+-	background-color: $bodyBackground;
+-	color: $textColor;
+-	font-family: $baseFontFamily;
+-	font-size: $baseFontSize;
+-	line-height: $baseLineHeight;
++	background-color: $body-bg;
++	color: $text-color;
++	font-family: $font-family-base;
++	font-size: $font-size-base;
++	line-height: $line-height-base;
+ 	margin: 0;
+ }
+
+Index: fontstyle.css
+===================================================================
+--- fontstyle.css	Original File
++++ fontstyle.css	Updated File
+
+===================================================================
+--- custom.css	Original File
++++ _custom.scss	Updated File
+
+Index: _variables.scss
+===================================================================
+--- _variables.scss	Original File
++++ _variables.scss	Updated File
+
+Index: blue.css
+===================================================================
+--- blue.css	Original File
++++ blue.css	Updated File
+
+Index: brown.css
+===================================================================
+--- brown.css	Original File
++++ brown.css	Updated File
+
+Index: default.css
+===================================================================
+--- default.css	Original File
++++ default.css	Updated File
+
+Index: emerald.css
+===================================================================
+--- emerald.css	Original File
++++ emerald.css	Updated File
+
+Index: green.css
+===================================================================
+--- green.css	Original File
++++ green.css	Updated File
+
+Index: navy.css
+===================================================================
+--- navy.css	Original File
++++ navy.css	Updated File
+
+Index: purple.css
+===================================================================
+--- purple.css	Original File
++++ purple.css	Updated File
+
+Index: red.css
+===================================================================
+--- red.css	Original File
++++ red.css	Updated File
+
+Index: yellow.css
+===================================================================
+--- yellow.css	Original File
++++ yellow.css	Updated File
+
+Index: edison.css
+===================================================================
+--- edison.css	Original File
++++ edison.css	Updated File
+
+Index: global_portlet.css
+===================================================================
+--- global_portlet.css	Original File
++++ global_portlet.css	Updated File
+
+Index: NanumBarunGothic-Bold.eot
+===================================================================
+--- NanumBarunGothic-Bold.eot	Original File
++++ NanumBarunGothic-Bold.eot	Updated File
+
+Index: NanumBarunGothic-Bold.ttf
+===================================================================
+--- NanumBarunGothic-Bold.ttf	Original File
++++ NanumBarunGothic-Bold.ttf	Updated File
+
+Index: NanumBarunGothic-Bold.woff
+===================================================================
+--- NanumBarunGothic-Bold.woff	Original File
++++ NanumBarunGothic-Bold.woff	Updated File
+
+Index: NanumBarunGothic-Regular.eot
+===================================================================
+--- NanumBarunGothic-Regular.eot	Original File
++++ NanumBarunGothic-Regular.eot	Updated File
+
+Index: NanumBarunGothic-Regular.ttf
+===================================================================
+--- NanumBarunGothic-Regular.ttf	Original File
++++ NanumBarunGothic-Regular.ttf	Updated File
+
+Index: NanumBarunGothic-Regular.woff
+===================================================================
+--- NanumBarunGothic-Regular.woff	Original File
++++ NanumBarunGothic-Regular.woff	Updated File
+
+Index: NanumGothic-Bold-iefix.eot
+===================================================================
+--- NanumGothic-Bold-iefix.eot	Original File
++++ NanumGothic-Bold-iefix.eot	Updated File
+
+Index: NanumGothic-Bold.eot
+===================================================================
+--- NanumGothic-Bold.eot	Original File
++++ NanumGothic-Bold.eot	Updated File
+
+Index: NanumGothic-Bold.ttf
+===================================================================
+--- NanumGothic-Bold.ttf	Original File
++++ NanumGothic-Bold.ttf	Updated File
+
+Index: NanumGothic-Bold.woff
+===================================================================
+--- NanumGothic-Bold.woff	Original File
++++ NanumGothic-Bold.woff	Updated File
+
+Index: NanumGothic-Bold.woff2
+===================================================================
+--- NanumGothic-Bold.woff2	Original File
++++ NanumGothic-Bold.woff2	Updated File
+
+Index: NanumGothic-ExtraBold-iefix.eot
+===================================================================
+--- NanumGothic-ExtraBold-iefix.eot	Original File
++++ NanumGothic-ExtraBold-iefix.eot	Updated File
+
+Index: NanumGothic-ExtraBold.eot
+===================================================================
+--- NanumGothic-ExtraBold.eot	Original File
++++ NanumGothic-ExtraBold.eot	Updated File
+
+Index: NanumGothic-ExtraBold.ttf
+===================================================================
+--- NanumGothic-ExtraBold.ttf	Original File
++++ NanumGothic-ExtraBold.ttf	Updated File
+
+Index: NanumGothic-ExtraBold.woff
+===================================================================
+--- NanumGothic-ExtraBold.woff	Original File
++++ NanumGothic-ExtraBold.woff	Updated File
+
+Index: NanumGothic-ExtraBold.woff2
+===================================================================
+--- NanumGothic-ExtraBold.woff2	Original File
++++ NanumGothic-ExtraBold.woff2	Updated File
+
+Index: NanumGothic-Regular-iefix.eot
+===================================================================
+--- NanumGothic-Regular-iefix.eot	Original File
++++ NanumGothic-Regular-iefix.eot	Updated File
+
+Index: NanumGothic-Regular.eot
+===================================================================
+--- NanumGothic-Regular.eot	Original File
++++ NanumGothic-Regular.eot	Updated File
+
+Index: NanumGothic-Regular.ttf
+===================================================================
+--- NanumGothic-Regular.ttf	Original File
++++ NanumGothic-Regular.ttf	Updated File
+
+Index: NanumGothic-Regular.woff
+===================================================================
+--- NanumGothic-Regular.woff	Original File
++++ NanumGothic-Regular.woff	Updated File
+
+Index: NanumGothic-Regular.woff2
+===================================================================
+--- NanumGothic-Regular.woff2	Original File
++++ NanumGothic-Regular.woff2	Updated File
+
+Index: bootstrap.scss
+===================================================================
+--- bootstrap.scss	Original File
++++ bootstrap.scss	Updated File
+
+Index: _bs2_extender.scss
+===================================================================
+--- _bs2_extender.scss	Original File
++++ _bs2_extender.scss	Updated File
+
+Index: _bs_liferay_fixes.scss
+===================================================================
+--- _bs_liferay_fixes.scss	Original File
++++ _bs_liferay_fixes.scss	Updated File
+
+Index: custom-edison.scss
+===================================================================
+--- custom-edison.scss	Original File
++++ custom-edison.scss	Updated File
+
+Index: _alerts.scss
+===================================================================
+--- _alerts.scss	Original File
++++ _alerts.scss	Updated File
+
+Index: _badges.scss
+===================================================================
+--- _badges.scss	Original File
++++ _badges.scss	Updated File
+
+Index: _breadcrumbs.scss
+===================================================================
+--- _breadcrumbs.scss	Original File
++++ _breadcrumbs.scss	Updated File
+
+Index: _button-groups.scss
+===================================================================
+--- _button-groups.scss	Original File
++++ _button-groups.scss	Updated File
+@@ -113,13 +113,13 @@
+ 
+ // The clickable button for toggling the menu
+ // Remove the gradient and set the same inset shadow as the :active state
+ .btn-group.open .dropdown-toggle {
+-  @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
++  box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+ 
+   // Show no shadow for `.btn-link` since it has no other button styles.
+   &.btn-link {
+-    @include box-shadow(none);
++    box-shadow: none;
+   }
+ }
+ 
+ 
+
+Index: _buttons.scss
+===================================================================
+--- _buttons.scss	Original File
++++ _buttons.scss	Updated File
+@@ -39,17 +39,17 @@
+   &:active,
+   &.active {
+     outline: 0;
+     background-image: none;
+-    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
++    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+   }
+ 
+   &.disabled,
+   &[disabled],
+   fieldset[disabled] & {
+     cursor: $cursor-disabled;
+     @include opacity(.65);
+-    @include box-shadow(none);
++    box-shadow: none;
+   }
+ 
+   // [converter] extracted a& to a.btn
+ }
+@@ -103,9 +103,9 @@
+   &.active,
+   &[disabled],
+   fieldset[disabled] & {
+     background-color: transparent;
+-    @include box-shadow(none);
++    box-shadow: none;
+   }
+   &,
+   &:hover,
+   &:focus,
+
+Index: _carousel.scss
+===================================================================
+--- _carousel.scss	Original File
++++ _carousel.scss	Updated File
+@@ -32,20 +32,20 @@
+       @include perspective(1000px);
+ 
+       &.next,
+       &.active.right {
+-        @include translate3d(100%, 0, 0);
++        @include translate3d-deprecated(100%, 0, 0);
+         left: 0;
+       }
+       &.prev,
+       &.active.left {
+-        @include translate3d(-100%, 0, 0);
++        @include translate3d-deprecated(-100%, 0, 0);
+         left: 0;
+       }
+       &.next.left,
+       &.prev.right,
+       &.active {
+-        @include translate3d(0, 0, 0);
++        @include translate3d-deprecated(0, 0, 0);
+         left: 0;
+       }
+     }
+   }
+
+Index: _close.scss
+===================================================================
+--- _close.scss	Original File
++++ _close.scss	Updated File
+
+Index: _code.scss
+===================================================================
+--- _code.scss	Original File
++++ _code.scss	Updated File
+
+Index: _component-animations.scss
+===================================================================
+--- _component-animations.scss	Original File
++++ _component-animations.scss	Updated File
+
+Index: _dropdowns.scss
+===================================================================
+--- _dropdowns.scss	Original File
++++ _dropdowns.scss	Updated File
+@@ -44,9 +44,9 @@
+   background-color: $dropdown-bg;
+   border: 1px solid $dropdown-fallback-border; // IE8 fallback
+   border: 1px solid $dropdown-border;
+   border-radius: $border-radius-base;
+-  @include box-shadow(0 6px 12px rgba(0,0,0,.175));
++  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+   background-clip: padding-box;
+ 
+   // Aligns the dropdown menu to right
+   //
+
+Index: _forms.scss
+===================================================================
+--- _forms.scss	Original File
++++ _forms.scss	Updated File
+@@ -122,9 +122,9 @@
+   background-color: $input-bg;
+   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+   border: 1px solid $input-border;
+   border-radius: $input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
++  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+   @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+ 
+   // Customize the `:focus` state to imitate native WebKit styles.
+   @include form-control-focus;
+
+Index: _glyphicons.scss
+===================================================================
+--- _glyphicons.scss	Original File
++++ _glyphicons.scss	Updated File
+
+Index: _grid.scss
+===================================================================
+--- _grid.scss	Original File
++++ _grid.scss	Updated File
+
+Index: _input-groups.scss
+===================================================================
+--- _input-groups.scss	Original File
++++ _input-groups.scss	Updated File
+
+Index: _jumbotron.scss
+===================================================================
+--- _jumbotron.scss	Original File
++++ _jumbotron.scss	Updated File
+
+Index: _labels.scss
+===================================================================
+--- _labels.scss	Original File
++++ _labels.scss	Updated File
+
+Index: _list-group.scss
+===================================================================
+--- _list-group.scss	Original File
++++ _list-group.scss	Updated File
+
+Index: _media.scss
+===================================================================
+--- _media.scss	Original File
++++ _media.scss	Updated File
+
+Index: _mixins.scss
+===================================================================
+--- _mixins.scss	Original File
++++ _mixins.scss	Updated File
+
+Index: _modals.scss
+===================================================================
+--- _modals.scss	Original File
++++ _modals.scss	Updated File
+@@ -29,12 +29,12 @@
+   outline: 0;
+ 
+   // When fading in the modal, animate it to slide down
+   &.fade .modal-dialog {
+-    @include translate(0, -25%);
++    @include translate-deprecated(0, -25%);
+     @include transition-transform(0.3s ease-out);
+   }
+-  &.in .modal-dialog { @include translate(0, 0) }
++  &.in .modal-dialog { @include translate-deprecated(0, 0) }
+ }
+ .modal-open .modal {
+   overflow-x: hidden;
+   overflow-y: auto;
+@@ -53,9 +53,9 @@
+   background-color: $modal-content-bg;
+   border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+   border: 1px solid $modal-content-border-color;
+   border-radius: $border-radius-large;
+-  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
++  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+   background-clip: padding-box;
+   // Remove focus outline from opened modal
+   outline: 0;
+ }
+@@ -137,9 +137,9 @@
+     width: $modal-md;
+     margin: 30px auto;
+   }
+   .modal-content {
+-    @include box-shadow(0 5px 15px rgba(0,0,0,.5));
++    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+   }
+ 
+   // Modal sizes
+   .modal-sm { width: $modal-sm; }
+
+Index: _navbar.scss
+===================================================================
+--- _navbar.scss	Original File
++++ _navbar.scss	Updated File
+@@ -289,9 +289,9 @@
+   padding: 10px $navbar-padding-horizontal;
+   border-top: 1px solid transparent;
+   border-bottom: 1px solid transparent;
+   $shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+-  @include box-shadow($shadow);
++  box-shadow: $shadow;
+ 
+   // Mixin behavior for optimum display
+   @include form-inline;
+ 
+@@ -315,9 +315,9 @@
+     margin-left: 0;
+     margin-right: 0;
+     padding-top: 0;
+     padding-bottom: 0;
+-    @include box-shadow(none);
++    box-shadow: none;
+   }
+ }
+ 
+ 
+
+Index: _navs.scss
+===================================================================
+--- _navs.scss	Original File
++++ _navs.scss	Updated File
+
+Index: _normalize.scss
+===================================================================
+--- _normalize.scss	Original File
++++ _normalize.scss	Updated File
+
+Index: _pager.scss
+===================================================================
+--- _pager.scss	Original File
++++ _pager.scss	Updated File
+
+Index: _pagination.scss
+===================================================================
+--- _pagination.scss	Original File
++++ _pagination.scss	Updated File
+
+Index: _panels.scss
+===================================================================
+--- _panels.scss	Original File
++++ _panels.scss	Updated File
+@@ -8,9 +8,9 @@
+   margin-bottom: $line-height-computed;
+   background-color: $panel-bg;
+   border: 1px solid transparent;
+   border-radius: $panel-border-radius;
+-  @include box-shadow(0 1px 1px rgba(0,0,0,.05));
++  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+ }
+ 
+ // Panel contents
+ .panel-body {
+
+Index: _popovers.scss
+===================================================================
+--- _popovers.scss	Original File
++++ _popovers.scss	Updated File
+@@ -20,9 +20,9 @@
+   background-clip: padding-box;
+   border: 1px solid $popover-fallback-border-color;
+   border: 1px solid $popover-border-color;
+   border-radius: $border-radius-large;
+-  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
++  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+ 
+   // Offset the popover to account for the popover arrow
+   &.top     { margin-top: -$popover-arrow-width; }
+   &.right   { margin-left: $popover-arrow-width; }
+
+Index: _print.scss
+===================================================================
+--- _print.scss	Original File
++++ _print.scss	Updated File
+
+Index: _progress-bars.scss
+===================================================================
+--- _progress-bars.scss	Original File
++++ _progress-bars.scss	Updated File
+@@ -28,9 +28,9 @@
+   height: $line-height-computed;
+   margin-bottom: $line-height-computed;
+   background-color: $progress-bg;
+   border-radius: $progress-border-radius;
+-  @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
++  box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+ }
+ 
+ // Bar of progress
+ .progress-bar {
+@@ -41,9 +41,9 @@
+   line-height: $line-height-computed;
+   color: $progress-bar-color;
+   text-align: center;
+   background-color: $progress-bar-bg;
+-  @include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
++  box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+   @include transition(width .6s ease);
+ }
+ 
+ // Striped bars
+
+Index: _responsive-embed.scss
+===================================================================
+--- _responsive-embed.scss	Original File
++++ _responsive-embed.scss	Updated File
+
+Index: _responsive-utilities.scss
+===================================================================
+--- _responsive-utilities.scss	Original File
++++ _responsive-utilities.scss	Updated File
+
+Index: _scaffolding.scss
+===================================================================
+--- _scaffolding.scss	Original File
++++ _scaffolding.scss	Updated File
+
+Index: _tables.scss
+===================================================================
+--- _tables.scss	Original File
++++ _tables.scss	Updated File
+
+Index: _theme.scss
+===================================================================
+--- _theme.scss	Original File
++++ _theme.scss	Updated File
+@@ -24,20 +24,20 @@
+ .btn-warning,
+ .btn-danger {
+   text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+   $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+-  @include box-shadow($shadow);
++  box-shadow: $shadow;
+ 
+   // Reset the shadow
+   &:active,
+   &.active {
+-    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
++    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+   }
+ 
+   &.disabled,
+   &[disabled],
+   fieldset[disabled] & {
+-    @include box-shadow(none);
++    box-shadow: none;
+   }
+ 
+   .badge {
+     text-shadow: none;
+@@ -101,9 +101,9 @@
+ // --------------------------------------------------
+ 
+ .thumbnail,
+ .img-thumbnail {
+-  @include box-shadow(0 1px 2px rgba(0,0,0,.075));
++  box-shadow: 0 1px 2px rgba(0,0,0,.075);
+ }
+ 
+ 
+ //
+@@ -132,14 +132,14 @@
+   @include gradient-vertical($start-color: lighten($navbar-default-bg, 10%), $end-color: $navbar-default-bg);
+   @include reset-filter; // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
+   border-radius: $navbar-border-radius;
+   $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);
+-  @include box-shadow($shadow);
++  box-shadow: $shadow;
+ 
+   .navbar-nav > .open > a,
+   .navbar-nav > .active > a {
+     @include gradient-vertical($start-color: darken($navbar-default-link-active-bg, 5%), $end-color: darken($navbar-default-link-active-bg, 2%));
+-    @include box-shadow(inset 0 3px 9px rgba(0,0,0,.075));
++    box-shadow: inset 0 3px 9px rgba(0,0,0,.075);
+   }
+ }
+ .navbar-brand,
+ .navbar-nav > li > a {
+@@ -153,9 +153,9 @@
+   border-radius: $navbar-border-radius;
+   .navbar-nav > .open > a,
+   .navbar-nav > .active > a {
+     @include gradient-vertical($start-color: $navbar-inverse-link-active-bg, $end-color: lighten($navbar-inverse-link-active-bg, 2.5%));
+-    @include box-shadow(inset 0 3px 9px rgba(0,0,0,.25));
++    box-shadow: inset 0 3px 9px rgba(0,0,0,.25);
+   }
+ 
+   .navbar-brand,
+   .navbar-nav > li > a {
+@@ -190,9 +190,9 @@
+ // Common styles
+ .alert {
+   text-shadow: 0 1px 0 rgba(255,255,255,.2);
+   $shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 2px rgba(0,0,0,.05);
+-  @include box-shadow($shadow);
++  box-shadow: $shadow;
+ }
+ 
+ // Mixin for generating new styles
+ @mixin alert-styles($color) {
+@@ -240,9 +240,9 @@
+ // --------------------------------------------------
+ 
+ .list-group {
+   border-radius: $border-radius-base;
+-  @include box-shadow(0 1px 2px rgba(0,0,0,.075));
++  box-shadow: 0 1px 2px rgba(0,0,0,.075);
+ }
+ .list-group-item.active,
+ .list-group-item.active:hover,
+ .list-group-item.active:focus {
+@@ -261,9 +261,9 @@
+ // --------------------------------------------------
+ 
+ // Common styles
+ .panel {
+-  @include box-shadow(0 1px 2px rgba(0,0,0,.05));
++  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+ }
+ 
+ // Mixin for generating new styles
+ @mixin panel-heading-styles($color) {
+@@ -286,6 +286,6 @@
+ .well {
+   @include gradient-vertical($start-color: darken($well-bg, 5%), $end-color: $well-bg);
+   border-color: darken($well-bg, 10%);
+   $shadow: inset 0 1px 3px rgba(0,0,0,.05), 0 1px 0 rgba(255,255,255,.1);
+-  @include box-shadow($shadow);
++  box-shadow: $shadow;
+ }
+
+Index: _thumbnails.scss
+===================================================================
+--- _thumbnails.scss	Original File
++++ _thumbnails.scss	Updated File
+
+Index: _tooltip.scss
+===================================================================
+--- _tooltip.scss	Original File
++++ _tooltip.scss	Updated File
+
+Index: _type.scss
+===================================================================
+--- _type.scss	Original File
++++ _type.scss	Updated File
+
+Index: _utilities.scss
+===================================================================
+--- _utilities.scss	Original File
++++ _utilities.scss	Updated File
+
+Index: _variables.scss
+===================================================================
+--- _variables.scss	Original File
++++ _variables.scss	Updated File
+
+Index: _wells.scss
+===================================================================
+--- _wells.scss	Original File
++++ _wells.scss	Updated File
+@@ -10,9 +10,9 @@
+   margin-bottom: 20px;
+   background-color: $well-bg;
+   border: 1px solid $well-border;
+   border-radius: $border-radius-base;
+-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
++  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+   blockquote {
+     border-color: #ddd;
+     border-color: rgba(0,0,0,.15);
+   }
+
+Index: _alerts.scss
+===================================================================
+--- _alerts.scss	Original File
++++ _alerts.scss	Updated File
+
+Index: _background-variant.scss
+===================================================================
+--- _background-variant.scss	Original File
++++ _background-variant.scss	Updated File
+
+Index: _border-radius.scss
+===================================================================
+--- _border-radius.scss	Original File
++++ _border-radius.scss	Updated File
+
+Index: _buttons.scss
+===================================================================
+--- _buttons.scss	Original File
++++ _buttons.scss	Updated File
+
+Index: _center-block.scss
+===================================================================
+--- _center-block.scss	Original File
++++ _center-block.scss	Updated File
+
+Index: _clearfix.scss
+===================================================================
+--- _clearfix.scss	Original File
++++ _clearfix.scss	Updated File
+
+Index: _forms.scss
+===================================================================
+--- _forms.scss	Original File
++++ _forms.scss	Updated File
+@@ -19,13 +19,13 @@
+   }
+   // Set the border and box shadow on specific inputs to match
+   .form-control {
+     border-color: $border-color;
+-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
++    box-shadow: inset 0 1px 1px rgba(0,0,0,.075); // Redeclare so transitions work
+     &:focus {
+       border-color: darken($border-color, 10%);
+       $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($border-color, 20%);
+-      @include box-shadow($shadow);
++      box-shadow: $shadow;
+     }
+   }
+   // Set validation states also for addons
+   .input-group-addon {
+@@ -56,9 +56,9 @@
+   $color-rgba: rgba(red($color), green($color), blue($color), .6);
+   &:focus {
+     border-color: $color;
+     outline: 0;
+-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba);
++    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba;
+   }
+ }
+ 
+ // Form control sizing
+
+Index: _gradients.scss
+===================================================================
+--- _gradients.scss	Original File
++++ _gradients.scss	Updated File
+
+Index: _grid-framework.scss
+===================================================================
+--- _grid-framework.scss	Original File
++++ _grid-framework.scss	Updated File
+
+Index: _grid.scss
+===================================================================
+--- _grid.scss	Original File
++++ _grid.scss	Updated File
+
+Index: _hide-text.scss
+===================================================================
+--- _hide-text.scss	Original File
++++ _hide-text.scss	Updated File
+
+Index: _image.scss
+===================================================================
+--- _image.scss	Original File
++++ _image.scss	Updated File
+
+Index: _labels.scss
+===================================================================
+--- _labels.scss	Original File
++++ _labels.scss	Updated File
+
+Index: _list-group.scss
+===================================================================
+--- _list-group.scss	Original File
++++ _list-group.scss	Updated File
+
+Index: _nav-divider.scss
+===================================================================
+--- _nav-divider.scss	Original File
++++ _nav-divider.scss	Updated File
+
+Index: _nav-vertical-align.scss
+===================================================================
+--- _nav-vertical-align.scss	Original File
++++ _nav-vertical-align.scss	Updated File
+
+Index: _opacity.scss
+===================================================================
+--- _opacity.scss	Original File
++++ _opacity.scss	Updated File
+
+Index: _pagination.scss
+===================================================================
+--- _pagination.scss	Original File
++++ _pagination.scss	Updated File
+
+Index: _panels.scss
+===================================================================
+--- _panels.scss	Original File
++++ _panels.scss	Updated File
+
+Index: _progress-bar.scss
+===================================================================
+--- _progress-bar.scss	Original File
++++ _progress-bar.scss	Updated File
+
+Index: _reset-filter.scss
+===================================================================
+--- _reset-filter.scss	Original File
++++ _reset-filter.scss	Updated File
+
+Index: _reset-text.scss
+===================================================================
+--- _reset-text.scss	Original File
++++ _reset-text.scss	Updated File
+
+Index: _resize.scss
+===================================================================
+--- _resize.scss	Original File
++++ _resize.scss	Updated File
+
+Index: _responsive-visibility.scss
+===================================================================
+--- _responsive-visibility.scss	Original File
++++ _responsive-visibility.scss	Updated File
+
+Index: _size.scss
+===================================================================
+--- _size.scss	Original File
++++ _size.scss	Updated File
+
+Index: _tab-focus.scss
+===================================================================
+--- _tab-focus.scss	Original File
++++ _tab-focus.scss	Updated File
+
+Index: _table-row.scss
+===================================================================
+--- _table-row.scss	Original File
++++ _table-row.scss	Updated File
+
+Index: _text-emphasis.scss
+===================================================================
+--- _text-emphasis.scss	Original File
++++ _text-emphasis.scss	Updated File
+
+Index: _text-overflow.scss
+===================================================================
+--- _text-overflow.scss	Original File
++++ _text-overflow.scss	Updated File
+
+Index: _vendor-prefixes.scss
+===================================================================
+--- _vendor-prefixes.scss	Original File
++++ _vendor-prefixes.scss	Updated File

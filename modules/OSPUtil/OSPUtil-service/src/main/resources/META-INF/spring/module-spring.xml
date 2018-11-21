@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="com.kisti.osp.util.service.impl.UtilLocalServiceImpl" id="com.kisti.osp.util.service.UtilLocalService" />
+	<bean class="com.kisti.osp.util.service.impl.UtilServiceImpl" id="com.kisti.osp.util.service.UtilService" />
+	<bean class="com.kisti.osp.util.service.persistence.impl.UtilPersistenceImpl" id="com.kisti.osp.util.service.persistence.UtilPersistence" parent="basePersistence" />
+</beans>
