@@ -1,23 +1,27 @@
 <?xml version="1.0"?>
 
 <model-hints>
-	<model name="com.kisti.osp.spyglass.model.InputPorts">
+	<model name="com.osp.spyglass.model.AssignedScheduler">
+		<field name="scienceAppId" type="long" />
+		<field name="assignedSchedulers" type="String" />
+	</model>
+	<model name="com.osp.spyglass.model.InputPorts">
 		<field name="scienceAppId" type="long" />
 		<field name="inputPorts" type="String" />
 	</model>
-	<model name="com.kisti.osp.spyglass.model.Layout">
+	<model name="com.osp.spyglass.model.Layout">
 		<field name="scienceAppId" type="long" />
 		<field name="layout" type="String" />
 	</model>
-	<model name="com.kisti.osp.spyglass.model.LogPorts">
+	<model name="com.osp.spyglass.model.LogPorts">
 		<field name="scienceAppId" type="long" />
 		<field name="logPorts" type="String" />
 	</model>
-	<model name="com.kisti.osp.spyglass.model.OutputPorts">
+	<model name="com.osp.spyglass.model.OutputPorts">
 		<field name="scienceAppId" type="long" />
 		<field name="outputPorts" type="String" />
 	</model>
-	<model name="com.kisti.osp.spyglass.model.ScienceApp">
+	<model name="com.osp.spyglass.model.ScienceApp">
 		<field name="uuid" type="String" />
 		<field name="scienceAppId" type="long" />
 		<field name="companyId" type="long" />
@@ -37,12 +41,10 @@
 		<field name="appType" type="String" />
 		<field name="runType" type="String" />
 		<field name="authorId" type="long" />
-		<field name="stage" type="String" />
+		<field name="registerStage" type="String" />
 		<field name="status" type="int" />
-		<field name="parallelModule" type="String" />
 		<field name="openLevel" type="String" />
 		<field name="license" type="String" />
 		<field name="srcFileName" type="String" />
-		<field name="languages" type="String" />
 	</model>
 </model-hints>

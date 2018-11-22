@@ -18,4 +18,4 @@ buildService {
 	apiDir = "../OSPIcebreaker-api/src/main/java"
 }
 
-group = "com.kisti.osp.icebreaker"
+group = "com.osp.icebreaker"

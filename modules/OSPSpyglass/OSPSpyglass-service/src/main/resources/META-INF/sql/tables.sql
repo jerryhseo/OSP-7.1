@@ -1,3 +1,8 @@
+create table SPYGLASS_AssignedScheduler (
+	scienceAppId LONG not null primary key,
+	assignedSchedulers VARCHAR(75) null
+);
+
 create table SPYGLASS_InputPorts (
 	scienceAppId LONG not null primary key,
 	inputPorts VARCHAR(75) null
@@ -38,11 +43,9 @@ create table SPYGLASS_ScienceApp (
 	appType VARCHAR(75) null,
 	runType VARCHAR(75) null,
 	authorId LONG,
-	stage VARCHAR(75) null,
+	registerStage VARCHAR(75) null,
 	status INTEGER,
-	parallelModule VARCHAR(75) null,
 	openLevel VARCHAR(75) null,
 	license VARCHAR(75) null,
-	srcFileName VARCHAR(75) null,
-	languages VARCHAR(75) null
+	srcFileName VARCHAR(75) null
 );

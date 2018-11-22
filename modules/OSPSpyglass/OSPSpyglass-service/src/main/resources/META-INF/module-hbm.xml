@@ -2,36 +2,43 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping auto-import="false" default-lazy="false">
-	<import class="com.kisti.osp.spyglass.model.InputPorts" />
-	<import class="com.kisti.osp.spyglass.model.Layout" />
-	<import class="com.kisti.osp.spyglass.model.LogPorts" />
-	<import class="com.kisti.osp.spyglass.model.OutputPorts" />
-	<import class="com.kisti.osp.spyglass.model.ScienceApp" />
-	<class name="com.kisti.osp.spyglass.model.impl.InputPortsImpl" table="SPYGLASS_InputPorts">
+	<import class="com.osp.spyglass.model.AssignedScheduler" />
+	<import class="com.osp.spyglass.model.InputPorts" />
+	<import class="com.osp.spyglass.model.Layout" />
+	<import class="com.osp.spyglass.model.LogPorts" />
+	<import class="com.osp.spyglass.model.OutputPorts" />
+	<import class="com.osp.spyglass.model.ScienceApp" />
+	<class name="com.osp.spyglass.model.impl.AssignedSchedulerImpl" table="SPYGLASS_AssignedScheduler">
+		<id name="scienceAppId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="assignedSchedulers" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.osp.spyglass.model.impl.InputPortsImpl" table="SPYGLASS_InputPorts">
 		<id name="scienceAppId" type="long">
 			<generator class="assigned" />
 		</id>
 		<property name="inputPorts" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
-	<class name="com.kisti.osp.spyglass.model.impl.LayoutImpl" table="SPYGLASS_Layout">
+	<class name="com.osp.spyglass.model.impl.LayoutImpl" table="SPYGLASS_Layout">
 		<id name="scienceAppId" type="long">
 			<generator class="assigned" />
 		</id>
 		<property name="layout" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
-	<class name="com.kisti.osp.spyglass.model.impl.LogPortsImpl" table="SPYGLASS_LogPorts">
+	<class name="com.osp.spyglass.model.impl.LogPortsImpl" table="SPYGLASS_LogPorts">
 		<id name="scienceAppId" type="long">
 			<generator class="assigned" />
 		</id>
 		<property name="logPorts" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
-	<class name="com.kisti.osp.spyglass.model.impl.OutputPortsImpl" table="SPYGLASS_OutputPorts">
+	<class name="com.osp.spyglass.model.impl.OutputPortsImpl" table="SPYGLASS_OutputPorts">
 		<id name="scienceAppId" type="long">
 			<generator class="assigned" />
 		</id>
 		<property name="outputPorts" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
-	<class name="com.kisti.osp.spyglass.model.impl.ScienceAppImpl" table="SPYGLASS_ScienceApp">
+	<class name="com.osp.spyglass.model.impl.ScienceAppImpl" table="SPYGLASS_ScienceApp">
 		<id name="scienceAppId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -53,12 +60,10 @@
 		<property name="appType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="runType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="authorId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-		<property name="stage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="registerStage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
-		<property name="parallelModule" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="openLevel" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="license" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="srcFileName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="languages" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 </hibernate-mapping>
