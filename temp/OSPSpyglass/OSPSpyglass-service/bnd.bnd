@@ -1,5 +1,0 @@
-Bundle-Name: OSPSpyglass-service
-Bundle-SymbolicName: com.kisti.osp.spyglass.service
-Bundle-Version: 1.0.0
-Liferay-Require-SchemaVersion: 1.0.0
-Liferay-Service: true

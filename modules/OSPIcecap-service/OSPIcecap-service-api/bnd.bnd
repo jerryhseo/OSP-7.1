@@ -1,0 +1,9 @@
+Bundle-Name: OSPIcecap-service-api
+Bundle-SymbolicName: com.osp.icecap.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.osp.icecap.exception,\
+	com.osp.icecap.model,\
+	com.osp.icecap.service,\
+	com.osp.icecap.service.persistence
+-includeresource: META-INF/service.xml=../OSPIcecap-service-service/service.xml

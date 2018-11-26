@@ -1,0 +1,4 @@
+Bundle-Name: ScienceAppManager
+Bundle-SymbolicName: com.osp.spyglass.scienceapp.manager
+Bundle-Version: 1.0.0
+Export-Package: com.osp.spyglass.scienceapp.manager.constants

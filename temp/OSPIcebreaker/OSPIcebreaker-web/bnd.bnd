@@ -1,4 +1,0 @@
-Bundle-Name: OSPIcebreaker-web
-Bundle-SymbolicName: com.kisti.osp.ib.scheduler.manager
-Bundle-Version: 1.0.0
-Export-Package: com.kisti.osp.ib.scheduler.manager.constants
