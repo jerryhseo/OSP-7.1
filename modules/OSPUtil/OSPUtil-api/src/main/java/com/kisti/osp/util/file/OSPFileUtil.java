@@ -1342,5 +1342,10 @@ public class OSPFileUtil {
 			}
 			return FileVisitResult.CONTINUE;
 		}
-    }
+	}
+
+	public static getLinkedTemporaryFilePath() {
+		
+	}
+
 }

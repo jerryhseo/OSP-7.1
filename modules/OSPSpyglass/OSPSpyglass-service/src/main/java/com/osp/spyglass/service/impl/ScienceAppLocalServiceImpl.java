@@ -191,7 +191,7 @@ public class ScienceAppLocalServiceImpl extends ScienceAppLocalServiceBaseImpl {
 				sc.getAssetLinkEntryIds(), 
 				AssetLinkConstants.TYPE_RELATED);
 
-		Indexer indexer = IndexerRegistryUtil.getIndexer(ScienceApp.class);
+		Indexer<ScienceApp> indexer = IndexerRegistryUtil.nullSafeGetIndexer(ScienceApp.class);
 		indexer.reindex(scienceApp);
 
 		return scienceApp;
