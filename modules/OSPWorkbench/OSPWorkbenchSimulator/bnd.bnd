@@ -1,0 +1,4 @@
+Bundle-Name: OSPWorkbenchSimulator
+Bundle-SymbolicName: com.osp.workbench.simulator
+Bundle-Version: 1.0.0
+Export-Package: com.osp.workbench.simulator.constants
