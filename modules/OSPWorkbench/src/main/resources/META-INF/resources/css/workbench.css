@@ -1,0 +1,9 @@
+.osp-workbench-canvas{
+        background-color: #664d00;
+        width   : 100%;
+        height  : 100%;
+        touch-action: none;
+        overflow: hidden;
+        margin  : 0;
+        padding : 0;
+ }

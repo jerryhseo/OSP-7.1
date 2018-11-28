@@ -1,0 +1,4 @@
+Bundle-Name: OSPWorkbench
+Bundle-SymbolicName: com.osp.workbench
+Bundle-Version: 1.0.0
+Export-Package: com.osp.workbench.constants

@@ -79,7 +79,6 @@
         
         <column name="openLevel" type="String"></column>
         <column name="license" type="String"></column>
-        <column name="srcFileName" type="String"></column>
         
        <order by="desc">
             <order-column name="createDate" order-by="desc"></order-column>
@@ -212,6 +211,8 @@
         <column name="assignedSchedulers" type="String" primary="false"></column>
     </entity>
     <exceptions>
+        <exception>NameAlreadyExistException</exception>
+        <exception>InvalidVersionException</exception>
     </exceptions>
 	
 </service-builder>
