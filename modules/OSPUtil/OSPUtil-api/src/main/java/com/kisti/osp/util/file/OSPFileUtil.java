@@ -201,25 +201,15 @@ public class OSPFileUtil {
 	
 	/*****************************************************************
 	 * Public APIs Section
-	 * @throws SystemException 
-	 * @throws PortalException 
 	 ****************************************************************/
-	
-	/**
-	 *  Link a file or a folder to servlet container template folder based on 
-	 *  of the servlet context path.
-	 *  Returns the template path based on of the servlet context path. 
-	 * @throws SystemException 
-	 * @throws PortalException 
-	 */
 	public static String getLinkedTemporaryFilePath(
-			PortletRequest portletRequest, 
+			PortletRequest portletRequest,
+			String userScreenName,
 	        String source, 
 	        String prefix, 
 	        String suffix,
 	        String repoType) throws PortalException, SystemException, IOException{
-			User user = PortalUtil.getUser(portletRequest);
-			Path sourcePath = getRepositoryPath(portletRequest, source, repoType);
+			Path sourcePath = getRepositoryPath(userScreenName, source, repoType);
 			
 			if( Files.notExists(sourcePath, LinkOption.NOFOLLOW_LINKS) )	
 					throw new FileNotFoundException(sourcePath.toString());
@@ -243,13 +233,14 @@ public class OSPFileUtil {
 	 *  Returns the template path based on of the servlet context path.
 	 */
 	public static String getCopiedTemporaryFilePath(
-			PortletRequest portletRequest, 
+			PortletRequest portletRequest,
+			String userScreenName,
 			String source, 
 			String prefix, 
 			String suffix,
 			String repoType) throws IOException, PortalException, SystemException{
-		final Path sourcePath = getRepositoryPath(portletRequest, source, repoType);
-		OSPRepositoryTypes repositoryType = OSPRepositoryTypes.valueOf(repoType);
+		final Path sourcePath = getRepositoryPath(userScreenName, source, repoType);
+		
 		if( Files.notExists(sourcePath) )	throw new FileNotFoundException(sourcePath.toString());
 
 		Path tempRealPath = Paths.get(portletRequest.getPortletSession().getPortletContext().getRealPath(TEMP_DIR_NAME));
@@ -275,7 +266,6 @@ public class OSPFileUtil {
 	
 		return tempUuidPath.getParent().getFileName().resolve(tempUuidPath.getFileName()).toString();
 	}
-
 	/**
 	 *  List file information in a folder and return JSONArray.
 	 *  [
@@ -288,11 +278,12 @@ public class OSPFileUtil {
 	 *  ]
 	 */
 	public static JSONArray getFolderInformation( 
-			PortletRequest portletRequest, 
+			PortletRequest portletRequest,
+			String userScreenName,
 			String folderPath, 
 			String filter,
 			String repositoryType ) throws IOException, PortalException, SystemException{
-		Path targetPath = getRepositoryPath(portletRequest, folderPath, repositoryType);
+		Path targetPath = getRepositoryPath(userScreenName, folderPath, repositoryType);
 		filter = extractExtension(filter);
 		
 		return lookUpFolder(targetPath.toFile(), filter);
@@ -307,16 +298,16 @@ public class OSPFileUtil {
 	 *  }
 	 */
 	public static JSONObject getFileInformation( 
-			PortletRequest portletRequest, 
+			String userScreenName,
 			String filePath,
 			String repositoryType ) throws IOException, PortalException, SystemException{
-		return getFileInformation(getRepositoryPath(portletRequest, filePath, repositoryType));
+		return getFileInformation(getRepositoryPath(userScreenName, filePath, repositoryType));
 	}
 	
-	public static Path createFile( PortletRequest portletRequest, String target, String repositoryType ) throws PortalException, SystemException, IOException{
-		Path filePath = getRepositoryPath(portletRequest, target, repositoryType);
+	public static Path createFile( String userScreenName, String target, String repositoryType ) throws PortalException, SystemException, IOException{
+		Path filePath = getRepositoryPath(userScreenName, target, repositoryType);
 		Path parentPath = Files.createDirectories(filePath.getParent());
-		String owner = getUserName(portletRequest)+":edisonuser";
+		String owner = userScreenName+":edisonuser";
 		Files.deleteIfExists(filePath);
 		Files.createFile(filePath);
 		changeFileOwner(parentPath.toString(), owner);
@@ -324,12 +315,12 @@ public class OSPFileUtil {
 		
 		return Paths.get(target);
 	}
-	
+
 	public static void deleteFile( 
-			PortletRequest portletRequest,  
+			String userScreenName,  
 			String target, 
 			String repositoryType ) throws IOException, PortalException, SystemException{
-		Path targetPath = getRepositoryPath(portletRequest, target, repositoryType);
+		Path targetPath = getRepositoryPath(userScreenName, target, repositoryType);
 		deleteFile(targetPath);
 	}
 	
@@ -338,19 +329,19 @@ public class OSPFileUtil {
 	}
 	
 	public static String moveFile( 
-			PortletRequest portletRequest,  
+			String userScreenName,
 			String source, 
 			String target, 
 			boolean overwrite, 
 			String repositoryType ) throws IOException, PortalException, SystemException{
 		
-		Path sourcePath = getRepositoryPath(portletRequest, source, repositoryType);
+		Path sourcePath = getRepositoryPath(userScreenName, source, repositoryType);
 		if( Files.notExists(sourcePath) )
 			throw new FileNotFoundException(sourcePath.toString());
 		
-		Path targetPath = getRepositoryPath(portletRequest, target, repositoryType);
+		Path targetPath = getRepositoryPath(userScreenName, target, repositoryType);
 		Path targetFolder = targetPath.getParent();
-		String owner = getUserName(portletRequest)+":edisonuser";
+		String owner = userScreenName+":edisonuser";
 		if( Files.notExists(targetFolder) ){
 			Files.createDirectories(targetFolder);
 		}
@@ -381,20 +372,21 @@ public class OSPFileUtil {
 	}
 	
 	public static String copyFile( 
-			PortletRequest portletRequest,
-			String source, 
+			String srcScreenName,
+			String source,
+			String srcRepoType,
+			String targetScreenName,
 			String target,
-			String repositoryType,
+			String targetRepoType,
 			boolean overwrite, 
-			String owner,
 			String mode
 			 ) throws IOException, PortalException, SystemException{
 		
-		Path sourcePath = getRepositoryPath(portletRequest, source, repositoryType);
+		Path sourcePath = getRepositoryPath(srcScreenName, source, srcRepoType);
 		if( Files.notExists(sourcePath) )
 			throw new FileNotFoundException(sourcePath.toString());
 		
-		Path targetPath = getRepositoryPath(portletRequest, target, repositoryType);
+		Path targetPath = getRepositoryPath(targetScreenName, target, targetRepoType);
 		Path targetFolder = targetPath.getParent();
 		
 		if( Files.notExists(targetFolder) ){
@@ -403,13 +395,13 @@ public class OSPFileUtil {
 		
 		copyFile(sourcePath, targetPath, overwrite);
 		
-		if( Validator.isNotNull(owner)){
-			owner = owner + "." + OSPPropertyKeys.getServerUserGroup();
-			changeFileOwner(targetFolder.toString(), owner);
+		String owner = targetScreenName + ":" + OSPPropertyKeys.getServerUserGroup();
+		changeFileOwner(targetFolder.toString(), owner);
+		if( Validator.isNull(mode) ){
+			mode = "g+w";
 		}
-		if( Validator.isNotNull(mode) ){
-			changeFileMode(targetFolder.toString(), mode);
-		}
+		
+		changeFileMode(targetFolder.toString(), mode);
 		
 		return target;
 	}
@@ -436,7 +428,7 @@ public class OSPFileUtil {
 	 * @throws PortalException 
 	 */
 	public static String copyDLEntryFile(
-			PortletRequest portletRequest,
+			String targetScreenName,
 			long srcDLEntryId, 
 			String target,
 			boolean overwrite, 
@@ -445,9 +437,9 @@ public class OSPFileUtil {
 		InputStream stream = null;
 		
 		stream = fileEntry.getContentStream();
-		Path targetPath = getRepositoryPath(portletRequest, target, repositoryType);
+		Path targetPath = getRepositoryPath(targetScreenName, target, repositoryType);
 		Path targetFolder = targetPath.getParent();
-		String owner = getUserName(portletRequest)+":edisonuser";
+		String owner = targetScreenName+":" + OSPPropertyKeys.getServerUserGroup();
 
 		if( !Files.exists( targetFolder ) ){
 			Files.createDirectories(targetFolder);
@@ -469,12 +461,12 @@ public class OSPFileUtil {
 	 * @throws PortalException 
 	 */
 	public static void changeFileOwner( 
-			PortletRequest portletRequest, 
+			String userScreenName, 
 			String target, 
 			String owner, 
 			String repositoryType ) throws PortalException, SystemException{
-		Path targetPath = getRepositoryPath(portletRequest, target, repositoryType);
-		owner = owner + ":edisonuser";
+		Path targetPath = getRepositoryPath(userScreenName, target, repositoryType);
+		owner = owner + ":"+OSPPropertyKeys.getServerUserGroup();
 		
 		changeFileOwner(targetPath.toString(), owner);
 	}
@@ -485,11 +477,11 @@ public class OSPFileUtil {
 	 * @throws PortalException 
 	 */
 	public static void changeFileMode( 
-			PortletRequest portletRequest, 
+			String userScreenName, 
 			String target, 
 			String mode, 
 			String repositoryType) throws PortalException, SystemException{
-		Path targetPath = getRepositoryPath(portletRequest, target, repositoryType);
+		Path targetPath = getRepositoryPath(userScreenName, target, repositoryType);
 		
 		changeFileMode(targetPath.toString(), mode);
 	}
@@ -584,8 +576,8 @@ public class OSPFileUtil {
 	/**
 	 * Check a file is exist or not.
 	 * 
-	 * @param portletRequest
 	 * @param portletResponse
+	 * @param userScreenName
 	 * @param filePath
 	 * @param repositoryType
 	 * 
@@ -594,11 +586,11 @@ public class OSPFileUtil {
 	 * @throws IOException
 	 */
 	public static void duplicated( 
-			PortletRequest portletRequest, 
-			PortletResponse portletResponse, 
+			PortletResponse portletResponse,
+			String userScreenName, 
 			String filePath,
 			String repositoryType) throws PortalException, SystemException, IOException{
-		Path targetPath = getRepositoryPath(portletRequest, filePath, repositoryType);
+		Path targetPath = getRepositoryPath(userScreenName, filePath, repositoryType);
 		
 		JSONObject result = JSONFactoryUtil.createJSONObject();
 		result.put("duplicated", Files.exists( targetPath ));
@@ -608,25 +600,17 @@ public class OSPFileUtil {
 
 	/**
 	 * Upload a file from session request as the target.
-	 * 
-	 * @param portletRequest
-	 * @param target
-	 * @param uploadFileName
-	 * @param repositoryType
-	 * 
-	 * @throws SystemException
-	 * @throws PortalException
-	 * @throws IOException
 	 */
-	public static void upload( 
-			PortletRequest portletRequest, 
+	public static void upload(
+			PortletRequest portletRequest,
+			String userScreenName, 
 			String target,
 			String uploadFileName,
 			String repositoryType) throws SystemException, PortalException, IOException{
 		
-		Path targetPath = getRepositoryPath(portletRequest, target, repositoryType);
+		Path targetPath = getRepositoryPath(userScreenName, target, repositoryType);
 		Path targetFolder = targetPath.getParent();
-		String owner = getUserName(portletRequest)+":edisonuser";
+		String owner = userScreenName+":"+OSPPropertyKeys.getServerUserGroup();
 		if( Files.notExists(targetFolder) ){
 			Files.createDirectories(targetFolder);
 		}
@@ -646,14 +630,6 @@ public class OSPFileUtil {
 	
 	/**
 	 * Download a DLEntry file.
-	 * 
-	 * @param portletRequest
-	 * @param portletResponse
-	 * @param dlFileEntryId
-	 * 
-	 * @throws PortalException
-	 * @throws SystemException
-	 * @throws IOException
 	 */
 	public static void downloadDLEntry(
 		    PortletRequest portletRequest, 
@@ -1343,9 +1319,4 @@ public class OSPFileUtil {
 			return FileVisitResult.CONTINUE;
 		}
 	}
-
-	public static getLinkedTemporaryFilePath() {
-		
-	}
-
 }
