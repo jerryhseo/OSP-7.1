@@ -17,6 +17,9 @@ String mode = (String)renderRequest.getAttribute("mode");
 %>
 
 <div class="container">
+	<div class="row">
+		<div id="<portlet:namespace/>Canvas" contenteditable="true">xxxxxxx</div>
+	</div>
 </div>
 
 <script>
