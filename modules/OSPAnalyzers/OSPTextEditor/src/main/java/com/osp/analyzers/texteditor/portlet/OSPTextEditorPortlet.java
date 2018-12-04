@@ -13,10 +13,12 @@ import org.osgi.service.component.annotations.Component;
  */
 @Component(
 	immediate = true,
+	configurationPid = "com.osp.analyzers.texteditor.OSPTextEditorConfiguration",
 	property = {
 		"com.liferay.portlet.display-category=OSP Analyzers",
 		"com.liferay.portlet.display-name=OSPTextEditor",
 		"com.liferay.portlet.add-default-resource=true",
+		"com.liferay.portlet.header-portlet-css=/css/osp-analyzer.css",
 		"com.liferay.portlet.instanceable=true",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",

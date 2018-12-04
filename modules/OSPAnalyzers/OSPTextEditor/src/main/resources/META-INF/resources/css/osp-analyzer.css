@@ -1,0 +1,33 @@
+.portlet-header {
+	margin-bottom:10px !important;
+}
+
+.osp-editor {
+	height: 100%;
+	width:100%;
+}
+
+.osp-editor .osp-canvas{
+	width:100%;
+	height:100%;
+	border:none;
+}
+
+.osp-editor .osp-header{
+	background-color: #bbbbbb;
+}
+
+.osp-editor .osp-header .osp-title{
+	background-color: #eeeeee;
+	text-shadow: 1px 1px darkgrey;
+	font-weight:900;
+	color: #6b6c7e;
+}
+
+.osp-editor .osp-header .osp-menu{
+	background-color: #eeeeee;
+}
+
+.osp-editor .hidden{
+	display:none;
+}
