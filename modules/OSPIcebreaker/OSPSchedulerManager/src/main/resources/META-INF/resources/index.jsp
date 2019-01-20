@@ -10,7 +10,7 @@
 <%@page import="com.liferay.portal.kernel.security.permission.ActionKeys"%>
 <%@page import="com.kisti.osp.icebreaker.service.OSPSchedulerEntryLocalServiceUtil"%>
 <%@page import="com.liferay.portal.kernel.util.PortalUtil"%>
-<%@ include file="init_config.jsp" %>
+<%@ include file="./init_config.jsp" %>
 
 <%
 	Portlet portlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId(), portletDisplay.getId());

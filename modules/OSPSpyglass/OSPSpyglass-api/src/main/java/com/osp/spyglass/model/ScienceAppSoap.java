@@ -57,7 +57,6 @@ public class ScienceAppSoap implements Serializable {
 		soapModel.setStatus(model.getStatus());
 		soapModel.setOpenLevel(model.getOpenLevel());
 		soapModel.setLicense(model.getLicense());
-		soapModel.setSrcFileName(model.getSrcFileName());
 
 		return soapModel;
 	}
@@ -294,14 +293,6 @@ public class ScienceAppSoap implements Serializable {
 		_license = license;
 	}
 
-	public String getSrcFileName() {
-		return _srcFileName;
-	}
-
-	public void setSrcFileName(String srcFileName) {
-		_srcFileName = srcFileName;
-	}
-
 	private String _uuid;
 	private long _scienceAppId;
 	private long _companyId;
@@ -325,5 +316,4 @@ public class ScienceAppSoap implements Serializable {
 	private int _status;
 	private String _openLevel;
 	private String _license;
-	private String _srcFileName;
 }

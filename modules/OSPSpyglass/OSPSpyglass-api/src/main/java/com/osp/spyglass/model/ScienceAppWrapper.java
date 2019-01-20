@@ -82,7 +82,6 @@ public class ScienceAppWrapper implements ScienceApp, ModelWrapper<ScienceApp> {
 		attributes.put("status", getStatus());
 		attributes.put("openLevel", getOpenLevel());
 		attributes.put("license", getLicense());
-		attributes.put("srcFileName", getSrcFileName());
 
 		return attributes;
 	}
@@ -225,12 +224,6 @@ public class ScienceAppWrapper implements ScienceApp, ModelWrapper<ScienceApp> {
 
 		if (license != null) {
 			setLicense(license);
-		}
-
-		String srcFileName = (String)attributes.get("srcFileName");
-
-		if (srcFileName != null) {
-			setSrcFileName(srcFileName);
 		}
 	}
 
@@ -640,16 +633,6 @@ public class ScienceAppWrapper implements ScienceApp, ModelWrapper<ScienceApp> {
 	@Override
 	public long getScienceAppId() {
 		return _scienceApp.getScienceAppId();
-	}
-
-	/**
-	* Returns the src file name of this science app.
-	*
-	* @return the src file name of this science app
-	*/
-	@Override
-	public String getSrcFileName() {
-		return _scienceApp.getSrcFileName();
 	}
 
 	/**
@@ -1190,16 +1173,6 @@ public class ScienceAppWrapper implements ScienceApp, ModelWrapper<ScienceApp> {
 	@Override
 	public void setScienceAppId(long scienceAppId) {
 		_scienceApp.setScienceAppId(scienceAppId);
-	}
-
-	/**
-	* Sets the src file name of this science app.
-	*
-	* @param srcFileName the src file name of this science app
-	*/
-	@Override
-	public void setSrcFileName(String srcFileName) {
-		_scienceApp.setSrcFileName(srcFileName);
 	}
 
 	/**

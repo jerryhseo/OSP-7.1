@@ -46,6 +46,5 @@ create table SPYGLASS_ScienceApp (
 	registerStage VARCHAR(75) null,
 	status INTEGER,
 	openLevel VARCHAR(75) null,
-	license VARCHAR(75) null,
-	srcFileName VARCHAR(75) null
+	license VARCHAR(75) null
 );

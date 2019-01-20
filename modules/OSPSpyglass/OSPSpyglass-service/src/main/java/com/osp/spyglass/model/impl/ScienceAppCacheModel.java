@@ -65,7 +65,7 @@ public class ScienceAppCacheModel implements CacheModel<ScienceApp>,
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(49);
+		StringBundler sb = new StringBundler(47);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -113,8 +113,6 @@ public class ScienceAppCacheModel implements CacheModel<ScienceApp>,
 		sb.append(openLevel);
 		sb.append(", license=");
 		sb.append(license);
-		sb.append(", srcFileName=");
-		sb.append(srcFileName);
 		sb.append("}");
 
 		return sb.toString();
@@ -247,13 +245,6 @@ public class ScienceAppCacheModel implements CacheModel<ScienceApp>,
 			scienceAppImpl.setLicense(license);
 		}
 
-		if (srcFileName == null) {
-			scienceAppImpl.setSrcFileName("");
-		}
-		else {
-			scienceAppImpl.setSrcFileName(srcFileName);
-		}
-
 		scienceAppImpl.resetOriginalValues();
 
 		return scienceAppImpl;
@@ -291,7 +282,6 @@ public class ScienceAppCacheModel implements CacheModel<ScienceApp>,
 		status = objectInput.readInt();
 		openLevel = objectInput.readUTF();
 		license = objectInput.readUTF();
-		srcFileName = objectInput.readUTF();
 	}
 
 	@Override
@@ -411,13 +401,6 @@ public class ScienceAppCacheModel implements CacheModel<ScienceApp>,
 		else {
 			objectOutput.writeUTF(license);
 		}
-
-		if (srcFileName == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(srcFileName);
-		}
 	}
 
 	public String uuid;
@@ -443,5 +426,4 @@ public class ScienceAppCacheModel implements CacheModel<ScienceApp>,
 	public int status;
 	public String openLevel;
 	public String license;
-	public String srcFileName;
 }

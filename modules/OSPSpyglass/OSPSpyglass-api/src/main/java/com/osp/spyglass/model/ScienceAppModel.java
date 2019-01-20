@@ -775,21 +775,6 @@ public interface ScienceAppModel extends BaseModel<ScienceApp>, GroupedModel,
 	 */
 	public void setLicense(String license);
 
-	/**
-	 * Returns the src file name of this science app.
-	 *
-	 * @return the src file name of this science app
-	 */
-	@AutoEscape
-	public String getSrcFileName();
-
-	/**
-	 * Sets the src file name of this science app.
-	 *
-	 * @param srcFileName the src file name of this science app
-	 */
-	public void setSrcFileName(String srcFileName);
-
 	@Override
 	public boolean isNew();
 

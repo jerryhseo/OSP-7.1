@@ -103,8 +103,7 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 			{ "registerStage", Types.VARCHAR },
 			{ "status", Types.INTEGER },
 			{ "openLevel", Types.VARCHAR },
-			{ "license", Types.VARCHAR },
-			{ "srcFileName", Types.VARCHAR }
+			{ "license", Types.VARCHAR }
 		};
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP = new HashMap<String, Integer>();
 
@@ -132,10 +131,9 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 		TABLE_COLUMNS_MAP.put("status", Types.INTEGER);
 		TABLE_COLUMNS_MAP.put("openLevel", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("license", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("srcFileName", Types.VARCHAR);
 	}
 
-	public static final String TABLE_SQL_CREATE = "create table SPYGLASS_ScienceApp (uuid_ VARCHAR(75) null,scienceAppId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,version VARCHAR(75) null,title STRING null,descriptionId STRING null,previousVersionId LONG,iconId STRING null,manualId STRING null,exeFileName VARCHAR(75) null,appType VARCHAR(75) null,runType VARCHAR(75) null,authorId LONG,registerStage VARCHAR(75) null,status INTEGER,openLevel VARCHAR(75) null,license VARCHAR(75) null,srcFileName VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table SPYGLASS_ScienceApp (uuid_ VARCHAR(75) null,scienceAppId LONG not null primary key,companyId LONG,groupId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,name VARCHAR(75) null,version VARCHAR(75) null,title STRING null,descriptionId STRING null,previousVersionId LONG,iconId STRING null,manualId STRING null,exeFileName VARCHAR(75) null,appType VARCHAR(75) null,runType VARCHAR(75) null,authorId LONG,registerStage VARCHAR(75) null,status INTEGER,openLevel VARCHAR(75) null,license VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table SPYGLASS_ScienceApp";
 	public static final String ORDER_BY_JPQL = " ORDER BY scienceApp.createDate DESC, scienceApp.version DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY SPYGLASS_ScienceApp.createDate DESC, SPYGLASS_ScienceApp.version DESC";
@@ -200,7 +198,6 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 		model.setStatus(soapModel.getStatus());
 		model.setOpenLevel(soapModel.getOpenLevel());
 		model.setLicense(soapModel.getLicense());
-		model.setSrcFileName(soapModel.getSrcFileName());
 
 		return model;
 	}
@@ -288,7 +285,6 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 		attributes.put("status", getStatus());
 		attributes.put("openLevel", getOpenLevel());
 		attributes.put("license", getLicense());
-		attributes.put("srcFileName", getSrcFileName());
 
 		attributes.put("entityCacheEnabled", isEntityCacheEnabled());
 		attributes.put("finderCacheEnabled", isFinderCacheEnabled());
@@ -434,12 +430,6 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 
 		if (license != null) {
 			setLicense(license);
-		}
-
-		String srcFileName = (String)attributes.get("srcFileName");
-
-		if (srcFileName != null) {
-			setSrcFileName(srcFileName);
 		}
 	}
 
@@ -1246,22 +1236,6 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 		_license = license;
 	}
 
-	@JSON
-	@Override
-	public String getSrcFileName() {
-		if (_srcFileName == null) {
-			return "";
-		}
-		else {
-			return _srcFileName;
-		}
-	}
-
-	@Override
-	public void setSrcFileName(String srcFileName) {
-		_srcFileName = srcFileName;
-	}
-
 	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(PortalUtil.getClassNameId(
@@ -1445,7 +1419,6 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 		scienceAppImpl.setStatus(getStatus());
 		scienceAppImpl.setOpenLevel(getOpenLevel());
 		scienceAppImpl.setLicense(getLicense());
-		scienceAppImpl.setSrcFileName(getSrcFileName());
 
 		scienceAppImpl.resetOriginalValues();
 
@@ -1701,20 +1674,12 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 			scienceAppCacheModel.license = null;
 		}
 
-		scienceAppCacheModel.srcFileName = getSrcFileName();
-
-		String srcFileName = scienceAppCacheModel.srcFileName;
-
-		if ((srcFileName != null) && (srcFileName.length() == 0)) {
-			scienceAppCacheModel.srcFileName = null;
-		}
-
 		return scienceAppCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(49);
+		StringBundler sb = new StringBundler(47);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -1762,8 +1727,6 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 		sb.append(getOpenLevel());
 		sb.append(", license=");
 		sb.append(getLicense());
-		sb.append(", srcFileName=");
-		sb.append(getSrcFileName());
 		sb.append("}");
 
 		return sb.toString();
@@ -1771,7 +1734,7 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(76);
+		StringBundler sb = new StringBundler(73);
 
 		sb.append("<model><model-name>");
 		sb.append("com.osp.spyglass.model.ScienceApp");
@@ -1869,10 +1832,6 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 			"<column><column-name>license</column-name><column-value><![CDATA[");
 		sb.append(getLicense());
 		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>srcFileName</column-name><column-value><![CDATA[");
-		sb.append(getSrcFileName());
-		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -1927,7 +1886,6 @@ public class ScienceAppModelImpl extends BaseModelImpl<ScienceApp>
 	private boolean _setOriginalStatus;
 	private String _openLevel;
 	private String _license;
-	private String _srcFileName;
 	private long _columnBitmask;
 	private ScienceApp _escapedModel;
 }

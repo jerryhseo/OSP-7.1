@@ -45,6 +45,5 @@
 		<field name="status" type="int" />
 		<field name="openLevel" type="String" />
 		<field name="license" type="String" />
-		<field name="srcFileName" type="String" />
 	</model>
 </model-hints>
